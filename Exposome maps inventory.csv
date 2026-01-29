@@ -1,56 +1,8 @@
 Title;Category;Theme;MD_TopicCategoryCode;Summary;File identifier;catalogue_page;thumbnail;geoserver_layer;geoserver_style;default_basemap;file_name;Spatial_representation_type;File type;start_time;end_time;Time period;Temporal resolution;Frequency;Spatial resolution;Spatial resolution as integer;Spatial resolution unit;Extent;Owner;cbs;lifelines;Unit;CRS;No-data value;show_on_map;available_years;Comments;Metadata last updated;Dataset last revised;Lineage_statement;Local path to XML file;Hosted XML file
-Annual NO2 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_NO2B25_AAV_v2;NO2;no2;NO2B25_AAV;NO2;;NO2B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;"Data is also available in monthly averages for January 2000 - December 2019.
-Expanse countries: Albania, Andorra, 
-Austria, Belgium, Bosnia and Herzegovina, 
-Bulgaria, Croatia, Czechia, Denmark, 
-Estonia, Faroes, Finland, France, Germany, 
-Greece, Guernsey, Hungary, Iceland, 
-Ireland, Isle of Man, Italy, Jersey, Latvia, 
-Liechtenstein, Lithuania, Luxembourg, 
-Monaco, Montenegro, Netherlands, North 
-Macedonia, Norway, Poland, Portugal, 
-Romania, San Marino, Serbia, Slovakia, 
-Slovenia, Spain, Sweden, Switzerland, 
-United Kingdom, Vatican City";8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_NO2_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_NO2_25m.xml
-Annual PM10 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_P10B25_AAV_v2;PM10;pm10;P10B25_AAV;P10;;P10B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;"Data is also available in monthly averages for January 2000 -December 2019.
-Expanse countries: Albania, Andorra, 
-Austria, Belgium, Bosnia and Herzegovina, 
-Bulgaria, Croatia, Czechia, Denmark, 
-Estonia, Faroes, Finland, France, Germany, 
-Greece, Guernsey, Hungary, Iceland, 
-Ireland, Isle of Man, Italy, Jersey, Latvia, 
-Liechtenstein, Lithuania, Luxembourg, 
-Monaco, Montenegro, Netherlands, North 
-Macedonia, Norway, Poland, Portugal, 
-Romania, San Marino, Serbia, Slovakia, 
-Slovenia, Spain, Sweden, Switzerland, 
-United Kingdom, Vatican City";8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_PM10_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_PM10_25m.xml
-Annual PM25 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_P25B25_AAV_v2;PM25;pm25;P25B25_AAV;P25;;P25B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;"Data is also available in monthly averages for January 2000 - December 2019.
-Expanse countries: Albania, Andorra, 
-Austria, Belgium, Bosnia and Herzegovina, 
-Bulgaria, Croatia, Czechia, Denmark, 
-Estonia, Faroes, Finland, France, Germany, 
-Greece, Guernsey, Hungary, Iceland, 
-Ireland, Isle of Man, Italy, Jersey, Latvia, 
-Liechtenstein, Lithuania, Luxembourg, 
-Monaco, Montenegro, Netherlands, North 
-Macedonia, Norway, Poland, Portugal, 
-Romania, San Marino, Serbia, Slovakia, 
-Slovenia, Spain, Sweden, Switzerland, 
-United Kingdom, Vatican City";8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_PM25_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_PM25_25m.xml
-Annual O3 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_OZOB25_AAV_v2;OZO;o3;OZOB25_AAV;OZO;;OZOB25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;"Data is also available in monthly averages for January 2000- December 2019.
-Expanse countries: Albania, Andorra, 
-Austria, Belgium, Bosnia and Herzegovina, 
-Bulgaria, Croatia, Czechia, Denmark, 
-Estonia, Faroes, Finland, France, Germany, 
-Greece, Guernsey, Hungary, Iceland, 
-Ireland, Isle of Man, Italy, Jersey, Latvia, 
-Liechtenstein, Lithuania, Luxembourg, 
-Monaco, Montenegro, Netherlands, North 
-Macedonia, Norway, Poland, Portugal, 
-Romania, San Marino, Serbia, Slovakia, 
-Slovenia, Spain, Sweden, Switzerland, 
-United Kingdom, Vatican City";8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_O3_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_O3_25m.xml
+Annual NO2 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_NO2B25_AAV_v2;NO2;no2;NO2B25_AAV;NO2;;NO2B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;Data is also available in monthly averages for January 2000 - December 2019.;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_NO2_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_NO2_25m.xml
+Annual PM10 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_P10B25_AAV_v2;PM10;pm10;P10B25_AAV;P10;;P10B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;Data is also available in monthly averages for January 2000 - December 2019.;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_PM10_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_PM10_25m.xml
+Annual PM25 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_P25B25_AAV_v2;PM25;pm25;P25B25_AAV;P25;;P25B25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;Data is also available in monthly averages for January 2000 - December 2019.;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_PM25_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_PM25_25m.xml
+Annual O3 25m;Physico-Chemical;Air pollution;environment;The air pollution annual average estimates were created by geographically and temporally weighted regression built for each pollutant from 2000 to 2019.;expanse_project_exposome_maps_OZOB25_AAV_v2;OZO;o3;OZOB25_AAV;OZO;;OZOB25_AAV_XX_XX_%yr%_v2;grid;TIF;01_01_2000;01_12_2023;2000 - 2023;Annual;;25x25 m;25;m;Full EU;Kees de Hoogh;1;1;microgram per cubed meter;ETRS89-extended / LAEA Europe (EPSG: 3035);NaN;TRUE;2003, 2023;Data is also available in monthly averages for January 2000 - December 2019.;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Annual_O3_25m.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Annual_O3_25m.xml
 Yearly average temperature;Physico-Chemical;Temperature;climatologyMeteorologyAtmosphere;No summary;expanse_project_exposome_maps_TMP_AVG_YEARLY_v3;Average_temperature;;TMP_AVG_YEARLY;TEMP;;TMP_AVG_XX_XX_%yr%_v3.tif;grid;TIF;01_01_2003;01_12_2020;2003 - 2020;Annual;;1x1km;1;km;Full EU;Kees de Hoogh;1;1;degrees C;ETRS89-extended / LAEA Europe (EPSG: 3035);-3,40E+38;TRUE;2003, 2020;;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Yearly_average_temperature.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Yearly_average_temperature.xml
 Daily average temperature;Physico-Chemical;Temperature;climatologyMeteorologyAtmosphere;No summary;expanse_project_exposome_maps_TMP_AVG_DAILY_v3;Average_temperature;;TMP_AVG;TEMP;;TMP_AVG_%day%_%mo%_%yr%_v3.tif;grid;TIF;01_01_2003;31_12_2020;2003 - 2020;Daily;;1x1km;1;km;Full EU;Kees de Hoogh;1;1;degrees C;ETRS89-extended / LAEA Europe (EPSG: 3035);-3,40E+38;FALSE;;;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Daily_average_temperature.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Daily_average_temperature.xml
 Daily minimum temperature;Physico-Chemical;Temperature;climatologyMeteorologyAtmosphere;No summary;expanse_project_exposome_maps_TMP_MIN_DAILY_v3;Minimum_temperature;min_temp;TMP_MIN;TEMP;;TMP_MIN_%day%_%mo%_%yr%_v3.tif;grid;TIF;01_01_2003;31_12_2020;2003 - 2020;Daily;;1x1km;1;km;Full EU;Kees de Hoogh;1;1;degrees C;ETRS89-extended / LAEA Europe (EPSG: 3035);-3,40E+38;FALSE;;;8-1-2026;8-1-2026;No lineage information;C:/Users/5298954/Documents/Github_Repos/exposome-maps/metadata_XMLs/metadata_Daily_minimum_temperature.xml;https://nginx-xml-metadata-dgk-prd-expomaps.apps.cl01.cp.its.uu.nl/xml_metadata_files/metadata_XMLs/metadata_Daily_minimum_temperature.xml
