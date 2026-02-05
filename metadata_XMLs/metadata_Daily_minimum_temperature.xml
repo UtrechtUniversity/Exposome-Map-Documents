@@ -15,14 +15,14 @@
 	<gmd:contact>
 		<gmd:CI_ResponsibleParty>
 			<gmd:organisationName>
-				<gco:CharacterString>Expanse</gco:CharacterString>
+				<gco:CharacterString>Institute for Risk Assessment Sciences (IRAS)</gco:CharacterString>
 			</gmd:organisationName>
 			<gmd:contactInfo>
 				<gmd:CI_Contact>
 					<gmd:address>
 						<gmd:CI_Address>
 							<gmd:electronicMailAddress>
-								<gco:CharacterString>test_email@gmail.com</gco:CharacterString>
+								<gco:CharacterString>exposome.office@uu.nl</gco:CharacterString>
 							</gmd:electronicMailAddress>
 						</gmd:CI_Address>
 					</gmd:address>
@@ -103,14 +103,14 @@
 			<gmd:pointOfContact>
 				<gmd:CI_ResponsibleParty>
 					<gmd:organisationName>
-						<gco:CharacterString>Expanse</gco:CharacterString>
+						<gco:CharacterString>Institute for Risk Assessment Sciences (IRAS)</gco:CharacterString>
 					</gmd:organisationName>
 					<gmd:contactInfo>
 						<gmd:CI_Contact>
 							<gmd:address>
 								<gmd:CI_Address>
 									<gmd:electronicMailAddress>
-										<gco:CharacterString>test_email@gmail.com</gco:CharacterString>
+										<gco:CharacterString>exposome.office@uu.nl</gco:CharacterString>
 									</gmd:electronicMailAddress>
 								</gmd:CI_Address>
 							</gmd:address>
