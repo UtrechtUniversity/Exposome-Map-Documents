@@ -210,7 +210,7 @@
 					<gmd:onLine>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>https://exposome.uu.nl/Median_MSAVI</gmd:URL>
+								<gmd:URL>https://exposome.uu.nl/catalogue_pages/Median_MSAVI.html</gmd:URL>
 							</gmd:linkage>
 							<gmd:name>
 								<gco:CharacterString>Metadata page</gco:CharacterString>

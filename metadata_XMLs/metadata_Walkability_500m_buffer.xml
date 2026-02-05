@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:ns3="http://www.w3.org/1999/xlink">
 	<gmd:fileIdentifier>
-		<gco:CharacterString>metadata_expanse_project_exposome_maps_WAL_B03_v3</gco:CharacterString>
+		<gco:CharacterString>metadata_expanse_project_exposome_maps_WAL_B05_v3</gco:CharacterString>
 	</gmd:fileIdentifier>
 	<gmd:language>
 		<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng">English</gmd:LanguageCode>
@@ -52,7 +52,7 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>Walkabiliy 300m buffer</gco:CharacterString>
+						<gco:CharacterString>Walkability 500m buffer</gco:CharacterString>
 					</gmd:title>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -67,7 +67,7 @@
 					<gmd:identifier>
 					  <gmd:MD_Identifier>
 						<gmd:code>
-						  <gco:CharacterString>expanse_project_exposome_maps_WAL_B03_v3</gco:CharacterString>
+						  <gco:CharacterString>expanse_project_exposome_maps_WAL_B05_v3</gco:CharacterString>
 						</gmd:code>
 					  </gmd:MD_Identifier>
 					</gmd:identifier>	
@@ -210,7 +210,7 @@
 					<gmd:onLine>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>https://exposome.uu.nl/Walkabiliy</gmd:URL>
+								<gmd:URL>https://exposome.uu.nl/catalogue_pages/Walkability.html</gmd:URL>
 							</gmd:linkage>
 							<gmd:name>
 								<gco:CharacterString>Metadata page</gco:CharacterString>
