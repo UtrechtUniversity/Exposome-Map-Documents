@@ -34,7 +34,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>8-1-2026</gco:Date>
+		<gco:Date>2026-02-07</gco:Date>
 	</gmd:dateStamp>
 	<gmd:referenceSystemInfo>
 		<gmd:MD_ReferenceSystem>
@@ -57,7 +57,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date>8-1-2026</gco:Date>
+								<gco:Date>2026-01-08</gco:Date>
 							</gmd:date>
 							<gmd:dateType>
 								<gmd:CI_DateTypeCode codeList="http://schemas.opengis.net/iso/19139/20060504/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">Revision</gmd:CI_DateTypeCode>
@@ -153,7 +153,7 @@
 							<gmd:extent>
 								<gml:TimePeriod gml:id="time_period">
 									<gml:beginPosition>2020-01-01</gml:beginPosition>
-									<gml:endPosition>2020-12-01</gml:endPosition>
+									<gml:endPosition>2020-12-31</gml:endPosition>
 								</gml:TimePeriod>
 							</gmd:extent>
 						</gmd:EX_TemporalExtent>
