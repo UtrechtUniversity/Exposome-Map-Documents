@@ -34,7 +34,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2026-02-07</gco:Date>
+		<gco:Date>2026-02-06</gco:Date>
 	</gmd:dateStamp>
 	<gmd:referenceSystemInfo>
 		<gmd:MD_ReferenceSystem>
@@ -52,7 +52,7 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>Downward UV radiation at the surface, monthy mean of daily average</gco:CharacterString>
+						<gco:CharacterString>Downward UV radiation at the surface, monthly mean of daily average</gco:CharacterString>
 					</gmd:title>
 					<gmd:date>
 						<gmd:CI_Date>
