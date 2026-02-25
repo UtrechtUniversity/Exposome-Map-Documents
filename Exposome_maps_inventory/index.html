@@ -60,7 +60,7 @@
 
       const table = document.getElementById('csv-table');
       const visibleHeaders = [
-        'Surface Number',
+        'Surface ID',
         'Title',
         'Category', 
         'Theme', 
@@ -111,6 +111,7 @@
         }
         return idx;
       });
+
       rows.forEach((row, i) => {
         const tr = document.createElement('tr');
         const cols = row.split(';');
@@ -124,6 +125,8 @@
       });
     }
 
+
+    
     loadCSV();
 
   </script>
