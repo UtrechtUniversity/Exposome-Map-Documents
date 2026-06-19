@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <head>
   <meta charset="UTF-8">
   <title>Exposome Maps Inventory</title>
@@ -49,86 +50,75 @@
 </head>
 <body>
   <h1>Exposome Maps Inventory</h1>
+  <h3>Summary of the Exposome Maps inventory. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for more visualization and more information.</h3>
+
   <table id="csv-table"></table>
 
   <script>
 
-    async function loadCSV() {
-      const response = await fetch('Exposome maps inventory.csv');
-      const text = await response.text();
-      const rows = text.split('\n').filter(r => r.trim() !== '');
+  async function loadCSV() {
+    const response = await fetch('Exposome maps inventory.csv');
+    const text = await response.text();
 
-      const table = document.getElementById('csv-table');
-      const visibleHeaders = [
-        'Surface ID',
-        'Title',
-        'Category', 
-        'Theme', 
-        'Summary', 
-        'Spatial_representation_type', 
-        'File type', 'start_time', 'end_time', 
-        'Time period', 
-        'Temporal resolution', 
-        'Frequency', 
-        'Spatial resolution',
-        'Extent', 
-        'Owner', 
-        'Unit', 
-        'CRS', 
-        'No-data value', 
-        'available', 
-        'Comments',
-        'References'
-      ];
+    const parsed = Papa.parse(text, {
+      header: true,
+      skipEmptyLines: true
+    });
 
-  const columnWidths = {
-    'Surface Number': '140px',
-    'Title': '300px',
-    'Category': '180px',
-    'Theme': '220px',
-    'Summary': '600px',
-    'Spatial_representation_type': '260px',
-    'File type': '160px',
-    'start_time': '140px',
-    'end_time': '140px',
-    'Time period': '180px',
-    'Temporal resolution': '200px',
-    'Frequency': '160px',
-    'Spatial resolution': '200px',
-    'Extent': '420px',
-    'Owner': '200px',
-    'Unit': '160px',
-    'CRS': '180px',
-    'No-data value': '160px',
-    'available_years': '200px',
-    'Comments': '600px'
-  };
+    const data = parsed.data;
 
-      const headerCols = rows[0].split(';');
-      const visibleIndexes = visibleHeaders.map(h => {
-        const idx = headerCols.indexOf(h);
-        if (idx === -1) {
-          throw new Error(`Column not found in CSV header: ${h}`);
-        }
-        return idx;
+    const table = document.getElementById('csv-table');
+
+    const visibleHeaders = [
+      'Surface ID',
+      'Title',
+      'Category',
+      'Theme',
+      'Summary',
+      'Spatial_representation_type',
+      'File type',
+      'start_time',
+      'end_time',
+      'Time period',
+      'Temporal resolution',
+      'Frequency',
+      'Spatial resolution',
+      'Extent',
+      'Owner',
+      'Unit',
+      'CRS',
+      'available',
+      'No-data value',
+      'Comments',
+      'References'
+    ];
+
+    // Header row
+    const headerRow = document.createElement('tr');
+
+    visibleHeaders.forEach(header => {
+      const th = document.createElement('th');
+      th.textContent = header;
+      headerRow.appendChild(th);
+    });
+
+    table.appendChild(headerRow);
+
+    // Data rows
+    data.forEach(row => {
+      const tr = document.createElement('tr');
+
+      visibleHeaders.forEach(header => {
+        const td = document.createElement('td');
+        td.textContent = row[header] || '';
+        tr.appendChild(td);
       });
 
-      rows.forEach((row, i) => {
-        const tr = document.createElement('tr');
-        const cols = row.split(';');
+      table.appendChild(tr);
+    });
+  }
 
-        visibleIndexes.forEach(index => {
-          const cell = document.createElement(i === 0 ? 'th' : 'td');
-          cell.textContent = cols[index] ?? '';
-          tr.appendChild(cell);
-        });
-        table.appendChild(tr);
-      });
-    }
-
-
-    
-    loadCSV();
+  loadCSV();
 
   </script>
 </body>
