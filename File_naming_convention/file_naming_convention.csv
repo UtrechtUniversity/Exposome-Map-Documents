@@ -1,0 +1,33 @@
+EXPOSURE,description,METRIC,description,DAY,description,MONTH,description,YEAR,description,RELEASE,description
+NO2,no2,B03,300m buffer,XX,no day,XX,no month,XX,no year,v1,Aprl 2021
+P10,pm10,B05,500m buffer,01,,01,January,00,2000,v2,April 2022
+P25,pm2.5,B08,800m buffer,02,,02,February,01,2001,v3,October 2022
+OZO,ozone,B10,1km buffer,03,,03,March,02,2002,v4,June 2026
+UFP,ufp,AVG,average,04,,04,April,03,2003,,
+TMP/TEMP,temperature,MIN,minimum,05,,05,May,04,2004,,
+NDV,ndvi,MAX,maximum,06,,06,June,05,2005,,
+MVI,msvi,P50,percentile 50,07,,07,July,06,2006,,
+GSC,green space CLC,WD5,week day,08,,08,August,07,2007,,
+GSU,green space Urban Atlas,WK2,weekend day,09,,09,September,08,2008,,
+BSW,blue space water,AAV,annual average,10,,10,October,09,2009,,
+BSS,blue space sea,MAV,monthly average,11,,11,November,10,2010,,
+BSI,blue space inland,DAV,daily average,12,,12,December,11,2011,,
+IMP,impervious surface,IND,indicator,13,,,,12,2012,,
+LAN,light at night,DIS,distance to nearest,14,,,,13,2013,,
+WAB,walkability,K08,kernel density 800m,15,,,,14,2014,,
+FAF,fast food,ST3,standard deviation in 300m buffer,16,,,,15,2015,,
+RST,restaurant,ST5,standard deviation in 500m buffer,17,,,,16,2016,,
+SPM,supermarket,ST1,standard deviation in 1km buffer,18,,,,17,2017,,
+rf,random forest,ME3,mean in 300m buffer,19,,,,18,2018,,
+,,ME5,mean in 500m buffer,20,,,,19,2019,,
+,,ME1,mean in 1km buffer,21,,,,20,2020,,
+,,MD3,median in 300m buffer,22,,,,21,2021,,
+,,MD5,median in 300m buffer,23,,,,22,2022,,
+,,MD1,median in 1km buffer,24,,,,23,2023,,
+,,,,25,,,,24,2024,,
+,,,,26,,,,25,2025,,
+,,,,27,,,,26,2026,,
+,,,,28,,,,27,2027,,
+,,,,29,,,,,,,
+,,,,30,,,,,,,
+,,,,31,,,,,,,

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Exposome Maps Inventory</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      margin: 2rem;
+      background-color: #fafafa;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: white;
+      font-size: 0.9rem;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: #f2f2f2;
+      font-weight: 600;
+      text-align: left;
+      border-bottom: 2px solid #ccc;
+    }
+
+    th, td {
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      max-width: 320px;
+      word-wrap: break-word;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #eef5ff;
+    }
+
+    .column-group-0 {
+      background-color: rgb(247, 227, 230);
+    }
+
+    .column-group-1 {
+      background-color: rgb(201, 229, 238);
+    }
+
+    .column-group-2 {
+      background-color: rgb(160, 238, 160);
+    }
+
+    .column-group-3 {
+      background-color: rgb(241, 225, 178);
+    }
+
+    .column-group-4 {
+      background-color: rgb(225, 201, 245);
+    }
+
+    .column-group-5 {
+      background-color: rgb(149, 176, 248);
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>Exposome variables file naming convention</h1>
+  <p>File names for Exposome variables follow a format that includes standardized metadata elements in a predictable order. This table shows the components that make up a name. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for visualization and more information.</p>
+  <p>For example, the file called: TEMP_AVG_20201201_v3.tif is the average temperature raster for December 1, 2020, which was modeled in 2022. The file called NO2B100_AAV_XX_XX_05_v2.tif represents the annual average of NO2 in a 100 meter buffer for 2005, as modeled in 2022.
+  </p>
+
+  <table id="csv-table"></table>
+
+  <script>
+
+async function loadCSV() {
+  const response = await fetch('file_naming_convention.csv');
+  const text = await response.text();
+
+  const parsed = Papa.parse(text, {
+    header: false,
+    skipEmptyLines: true
+  });
+
+  const data = parsed.data;
+
+  const table = document.getElementById('csv-table');
+
+  const headers = data[0];
+  const rows = data.slice(1);
+
+  // Header row
+  const headerRow = document.createElement('tr');
+
+  headers.forEach((header, index) => {
+    const th = document.createElement('th');
+    th.textContent = header;
+
+    // Every two columns get the same color
+    th.className = `column-group-${Math.floor(index / 2)}`;
+
+    headerRow.appendChild(th);
+  });
+
+  table.appendChild(headerRow);
+
+  // Data rows
+  rows.forEach(row => {
+    const tr = document.createElement('tr');
+
+    row.forEach((cell, index) => {
+      const td = document.createElement('td');
+      td.textContent = cell || '';
+
+      td.className = `column-group-${Math.floor(index / 2)}`;
+
+      tr.appendChild(td);
+    });
+
+    table.appendChild(tr);
+  });
+}
+
+loadCSV();
+
+  </script>
+</body>
+</html>
+
+
+
