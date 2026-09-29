@@ -7,81 +7,119 @@
   <style>
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      margin: 2rem;
-      background-color: #fafafa;
+      margin: 0;
+      color: #1f2937;
+      background: #f4f7f8;
+    }
+
+    main {
+      width: calc(100% - 2rem);
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
     }
 
     h1 {
       margin-bottom: 1rem;
     }
 
+    .intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      max-height: 70vh;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+
     table {
       border-collapse: collapse;
-      width: 100%;
+      width: max-content;
+      min-width: 100%;
       background-color: white;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
+      table-layout: fixed;
     }
 
     thead th {
       position: sticky;
       top: 0;
-      background-color: #f2f2f2;
+      z-index: 1;
+      background-color: #e8eef0;
       font-weight: 600;
       text-align: left;
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid #94a3b8;
+      white-space: nowrap;
     }
 
     th, td {
       padding: 0.6rem 0.8rem;
       border: 1px solid #ddd;
       vertical-align: top;
-      max-width: 320px;
-      word-wrap: break-word;
+      min-width: 110px;
+      max-width: 280px;
+      overflow-wrap: anywhere;
     }
 
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
+    tbody tr {
+      transition: background-color 120ms ease;
     }
 
     tbody tr:hover {
       background-color: #eef5ff;
     }
 
-    .column-group-0 {
-      background-color: rgb(247, 227, 230);
+    .theme-row {
+      background-color: var(--theme-color, #ffffff);
     }
 
-    .column-group-1 {
-      background-color: rgb(201, 229, 238);
+    .column-group-0 { background-color: #fce7f3; }
+    .column-group-1 { background-color: #dbeafe; }
+    .column-group-2 { background-color: #dcfce7; }
+    .column-group-3 { background-color: #fef3c7; }
+    .column-group-4 { background-color: #ede9fe; }
+    .column-group-5 { background-color: #cffafe; }
+
+    thead .column-group-0 { background-color: #f3b6d0; }
+    thead .column-group-1 { background-color: #a9ccef; }
+    thead .column-group-2 { background-color: #a8e4bd; }
+    thead .column-group-3 { background-color: #f1d98d; }
+    thead .column-group-4 { background-color: #cfc2ee; }
+    thead .column-group-5 { background-color: #9ddfe8; }
+
+
+
+    @media (max-width: 700px) {
+      main {
+        width: calc(100% - 1rem);
+        padding-top: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      th, td {
+        padding: 0.5rem 0.6rem;
+      }
     }
-
-    .column-group-2 {
-      background-color: rgb(160, 238, 160);
-    }
-
-    .column-group-3 {
-      background-color: rgb(241, 225, 178);
-    }
-
-    .column-group-4 {
-      background-color: rgb(225, 201, 245);
-    }
-
-    .column-group-5 {
-      background-color: rgb(149, 176, 248);
-    }
-
-
-
   </style>
 </head>
 <body>
-  <h1>Exposome variables file naming convention</h1>
-  <p>File names for Exposome variables follow a format that includes standardized metadata elements in a predictable order. This table shows the components that make up a name. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for visualization and more information.</p>
-  <p>For example, the file called: TEMP_AVG_20201201_v3.tif is the average temperature raster for December 1, 2020, which was modeled in 2022. The file called NO2B100_AAV_XX_XX_05_v2.tif represents the annual average of NO2 in a 100 meter buffer for 2005, as modeled in 2022.
-  </p>
+  <main>
+    <section class="intro">
+      <h1>Exposome variables file naming convention</h1>
+      <p>File names for Exposome variables follow a format that includes standardized metadata elements in a predictable order. This table shows the components that make up a name. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for visualization and more information.</p>
+      <p>For example, the file called: TEMP_AVG_20201201_v3.tif is the average temperature raster for December 1, 2020, which was modeled in 2022. The file called NO2B100_AAV_XX_XX_05_v2.tif represents the annual average of NO2 in a 100 meter buffer for 2005, as modeled in 2022.</p>
+    </section>
 
-  <table id="csv-table"></table>
+    <div class="table-container">
+      <table id="csv-table"></table>
+    </div>
+  </main>
 
   <script>
 
@@ -101,36 +139,61 @@ async function loadCSV() {
   const headers = data[0];
   const rows = data.slice(1);
 
+  const themeIndex = headers.findIndex(header => header.trim().toLowerCase() === 'theme');
+  const rowGroupIndex = themeIndex >= 0 ? themeIndex : 0;
+  const themeClasses = new Map();
+
+  function getThemeColor(themeIndex) {
+    const hue = (themeIndex * 137.508) % 360;
+    return `hsl(${hue} 70% 92%)`;
+  }
+
+  function getTheme(theme) {
+    const key = (theme || 'Unspecified').trim() || 'Unspecified';
+    if (!themeClasses.has(key)) {
+      themeClasses.set(key, {
+        color: getThemeColor(themeClasses.size)
+      });
+    }
+    return themeClasses.get(key);
+  }
+
   // Header row
+  const thead = document.createElement('thead');
   const headerRow = document.createElement('tr');
 
   headers.forEach((header, index) => {
     const th = document.createElement('th');
     th.textContent = header;
-
-    // Every two columns get the same color
-    th.className = `column-group-${Math.floor(index / 2)}`;
+    th.classList.add(`column-group-${Math.floor(index / 2)}`);
 
     headerRow.appendChild(th);
   });
 
-  table.appendChild(headerRow);
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
 
   // Data rows
   rows.forEach(row => {
     const tr = document.createElement('tr');
+    const theme = getTheme(row[rowGroupIndex]);
+    tr.classList.add('theme-row');
+    tr.style.setProperty('--theme-color', theme.color);
 
     row.forEach((cell, index) => {
       const td = document.createElement('td');
       td.textContent = cell || '';
-
-      td.className = `column-group-${Math.floor(index / 2)}`;
+      td.classList.add(`column-group-${Math.floor(index / 2)}`);
 
       tr.appendChild(td);
     });
 
-    table.appendChild(tr);
+    tbody.appendChild(tr);
   });
+
+  table.appendChild(tbody);
 }
 
 loadCSV();

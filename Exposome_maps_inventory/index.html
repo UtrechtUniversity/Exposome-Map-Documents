@@ -7,52 +7,105 @@
   <style>
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      margin: 2rem;
-      background-color: #fafafa;
+      margin: 0;
+      color: #1f2937;
+      background: #f4f7f8;
+    }
+
+    main {
+      width: calc(100% - 2rem);
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
     }
 
     h1 {
       margin-bottom: 1rem;
     }
 
+    .table-container {
+      overflow-x: auto;
+      max-height: 80vh;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+
     table {
       border-collapse: collapse;
-      width: 100%;
+      width: max-content;
+      min-width: 100%;
       background-color: white;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
+      table-layout: fixed;
     }
 
     thead th {
       position: sticky;
       top: 0;
-      background-color: #f2f2f2;
+      z-index: 1;
+      background-color: #e8eef0;
       font-weight: 600;
       text-align: left;
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid #94a3b8;
+      white-space: nowrap;
     }
 
     th, td {
       padding: 0.6rem 0.8rem;
       border: 1px solid #ddd;
       vertical-align: top;
-      max-width: 320px;
-      word-wrap: break-word;
+      min-width: 110px;
+      max-width: 280px;
+      overflow-wrap: anywhere;
     }
 
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
+    tbody tr {
+      transition: background-color 120ms ease;
+    }
+
+    .theme-row {
+      background-color: var(--theme-color, #ffffff);
     }
 
     tbody tr:hover {
       background-color: #eef5ff;
     }
+
+    .theme-0 { background-color: #fce7f3; }
+    .theme-1 { background-color: #dbeafe; }
+    .theme-2 { background-color: #dcfce7; }
+    .theme-3 { background-color: #fef3c7; }
+    .theme-4 { background-color: #ede9fe; }
+    .theme-5 { background-color: #cffafe; }
+    .theme-6 { background-color: #ffedd5; }
+    .theme-7 { background-color: #e2e8f0; }
+
+    @media (max-width: 700px) {
+      main {
+        width: calc(100% - 1rem);
+        padding-top: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      th, td {
+        padding: 0.5rem 0.6rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Exposome Maps Inventory</h1>
-  <h3>Summary of the Exposome Maps inventory. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for more visualization and more information.</h3>
+  <main>
+    <h1>Exposome Maps Inventory</h1>
+    <h3>Summary of the Exposome Maps inventory. Visit <a href="https://exposome.uu.nl/">exposome.uu.nl</a> for more visualization and more information.</h3>
 
-  <table id="csv-table"></table>
+    <div class="table-container">
+      <table id="csv-table"></table>
+    </div>
+  </main>
 
   <script>
 
@@ -93,7 +146,25 @@
       'References'
     ];
 
+    const themeClasses = new Map();
+
+    function getThemeColor(themeIndex) {
+      const hue = (themeIndex * 137.508) % 360;
+      return `hsl(${hue} 70% 92%)`;
+    }
+
+    function getTheme(theme) {
+      const key = (theme || 'Unspecified').trim() || 'Unspecified';
+      if (!themeClasses.has(key)) {
+        themeClasses.set(key, {
+          color: getThemeColor(themeClasses.size)
+        });
+      }
+      return themeClasses.get(key);
+    }
+
     // Header row
+    const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
 
     visibleHeaders.forEach(header => {
@@ -102,11 +173,17 @@
       headerRow.appendChild(th);
     });
 
-    table.appendChild(headerRow);
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
 
     // Data rows
     data.forEach(row => {
       const tr = document.createElement('tr');
+      const theme = getTheme(row.Theme);
+      tr.classList.add('theme-row');
+      tr.style.setProperty('--theme-color', theme.color);
 
       visibleHeaders.forEach(header => {
         const td = document.createElement('td');
@@ -114,8 +191,10 @@
         tr.appendChild(td);
       });
 
-      table.appendChild(tr);
+      tbody.appendChild(tr);
     });
+
+    table.appendChild(tbody);
   }
 
   loadCSV();
