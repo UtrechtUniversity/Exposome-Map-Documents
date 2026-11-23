@@ -2,25 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exposome Maps Data Request Form</title>
   <style>
-    body { font-family: system-ui, sans-serif; margin: 2rem; font-size: 30px; }
-    iframe { width: 100%; height: 90vh; border: none; }
+    :root {
+      --ink: #1f2937;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --paper: #ffffff;
+      --page: #f4f7f8;
+      --accent: #005b96;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--page);
+    }
+
+    main {
+      width: calc(100% - 2rem);
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .resource {
+      min-height: 155px;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+
+    .resource h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .resource p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .resource a {
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .download-button {
+      display: inline-block;
+      min-width: 210px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .download-button:hover,
+    .download-button:focus-visible {
+      background: #004b78;
+    }
+
+    .pdf-preview {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 90vh;
+      min-height: 600px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .resources { grid-template-columns: 1fr; }
+      .resource { min-height: 0; }
+    }
+
+    @media (max-width: 600px) {
+      main { width: calc(100% - 1rem); }
+      .downloads { flex-direction: column; }
+      .download-button { text-align: center; }
+      .pdf-preview { height: 70vh; }
+    }
   </style>
 </head>
 <body>
-<h1>Exposome Maps Data Request Form</h1>
-  <p>
-    <a href="Data Request Exposome Surfaces.docx" download>
-      Download request form as a Word document
-    </a>
-  </p>
-  <p>
-    <a href="Data Request Exposome Surfaces.pdf" download>
-      Download request form as a PDF
-    </a>
-  </p>
-  <iframe src="Data Request Exposome Surfaces.pdf#zoom=300"></iframe>
+  <main>
+    <h1>Exposome Maps Data Request Form</h1>
+    <p class="intro">
+      Use the resources below to identify the available data and review the naming and publication requirements before submitting a request.
+    </p>
 
+    <section class="resources" aria-label="Exposome Maps resources">
+      <article class="resource">
+        <h2>Exposome Maps Inventory</h2>
+        <p>Search the available maps to identify the variable, geographic coverage, time period, resolution, and other details you need.</p>
+        <a href="https://utrechtuniversity.github.io/Exposome-Map-Documents/Exposome_maps_inventory/" target="_blank" rel="noopener noreferrer">
+          Open the inventory
+        </a>
+      </article>
+
+      <article class="resource">
+        <h2>Data Access and Publication Policy</h2>
+        <p>Read the access conditions and requirements for using and publishing Exposome Maps data.</p>
+        <a href="../Data_Access_and_Publication_Policy/index.html">
+          Read the policy
+        </a>
+      </article>
+      <article class="resource">
+        <h2>File Naming Convention</h2>
+        <p>Once you've been given access to the data, view the components used to construct Exposome variable file names.</p>
+        <a href="https://utrechtuniversity.github.io/Exposome-Map-Documents/File_naming_convention/" target="_blank" rel="noopener noreferrer">
+          View naming conventions
+        </a>
+      </article>
+
+    </section>
+
+    <div class="downloads" aria-label="Download the request form">
+      <a class="download-button" href="Data Request Exposome Surfaces.docx" download>
+        Download Word document
+      </a>
+      <a class="download-button" href="Data Request Exposome Surfaces.pdf" download>
+        Download PDF
+      </a>
+    </div>
+
+    <iframe class="pdf-preview" title="Exposome Maps data request form preview" src="Data Request Exposome Surfaces.pdf#view=FitH"></iframe>
+  </main>
 </body>
 </html>
